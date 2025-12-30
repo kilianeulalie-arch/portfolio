@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon Portfolio | Kilian EULALIE</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #fcfcfc;
+            color: #1a1a1a;
+            overflow-x: hidden;
+        }
+
+        #progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 3px;
+            background: linear-gradient(to right, #000, #4a4a4a);
+            width: 0%;
+            z-index: 100;
+            transition: width 0.1s ease;
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px) scale(0.98);
+            transition: all 0.8s cubic-bezier(0.2, 1, 0.3, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+
+        .reveal-delay-1 { transition-delay: 0.1s; }
+        .reveal-delay-2 { transition-delay: 0.2s; }
+        .reveal-delay-3 { transition-delay: 0.3s; }
+
+        .nav-link {
+            position: relative;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 0;
+            background-color: #000;
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -9px;
+            top: 0;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background-color: #fff;
+            border: 2px solid #000;
+            z-index: 10;
+        }
+
+        .hover-lift {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .hover-lift:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px -10px rgba(0,0,0,0.1);
+        }
+
+        .logo-container {
+            background-color: #ffffff;
+            border: 1px solid #f0f0f0;
+            position: relative;
+            padding: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .svg-logo {
+            width: 80%;
+            height: auto;
+            max-height: 80px;
+            filter: grayscale(100%);
+            opacity: 0.7;
+            transition: all 0.4s ease;
+        }
+        .group:hover .svg-logo {
+            filter: grayscale(0%);
+            opacity: 1;
+            transform: scale(1.05);
+        }
+
+        /* Mode Detail Projet */
+        #project-detail-view {
+            display: none;
+            min-height: 100vh;
+        }
+        
+        body.project-mode #main-content {
+            display: none;
+        }
+        
+        body.project-mode #project-detail-view {
+            display: block;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <div id="progress-bar"></div>
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full bg-white/90 backdrop-blur-md z-50 border-b border-gray-100">
+        <div class="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
+            <div class="text-xl font-bold tracking-tighter uppercase cursor-pointer" onclick="closeProject()">PORTFOLIO.</div>
+            <div class="hidden md:flex space-x-8 text-sm font-medium text-gray-600" id="nav-menu">
+                <a href="#accueil" class="nav-link hover:text-black transition-colors">Accueil</a>
+                <a href="#competences" class="nav-link hover:text-black transition-colors">Compétences</a>
+                <a href="#parcours" class="nav-link hover:text-black transition-colors">Parcours</a>
+                <a href="#realisations" class="nav-link hover:text-black transition-colors">Réalisations</a>
+            </div>
+            <a href="mailto:kilianeulalie@gmail.com" class="bg-black text-white px-5 py-2.5 rounded-full text-sm hover:bg-gray-800 transition-all transform active:scale-95">Me contacter</a>
+        </div>
+    </nav>
+
+    <!-- VUE PRINCIPALE -->
+    <div id="main-content">
+        <!-- Hero Section -->
+        <section id="accueil" class="min-h-screen flex items-center pt-20 px-6">
+            <div class="max-w-4xl mx-auto">
+                <div class="reveal active">
+                    <span class="inline-block px-3 py-1 rounded-full bg-gray-100 text-xs font-semibold uppercase tracking-widest mb-6">Expert en Productivité & Solutions</span>
+                    <h1 class="text-5xl md:text-7xl font-bold tracking-tight mb-8 leading-[1.1]">
+                        Je conçois des systèmes pour vous faire <span class="text-gray-400">gagner du temps.</span>
+                    </h1>
+                    <p class="text-xl text-gray-500 max-w-2xl mb-10 leading-relaxed">
+                        Je suis Kilian EULALIE, un passionné d'optimisation. J'aide les entreprises à transformer leurs processus complexes en flux de travail fluides et rapides.
+                    </p>
+                    <div class="flex flex-wrap gap-4">
+                        <a href="#realisations" class="bg-black text-white px-8 py-4 rounded-lg font-medium hover:bg-gray-800 transition-all">Découvrir mes projets</a>
+                        <a href="#parcours" class="border-2 border-black px-8 py-4 rounded-lg font-medium hover:bg-black hover:text-white transition-all">Mon parcours</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Compétences -->
+        <section id="competences" class="py-24 bg-gray-50 px-6">
+            <div class="max-w-6xl mx-auto">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+                    <div class="reveal">
+                        <h2 class="text-3xl font-bold mb-4">Mes Compétences</h2>
+                        <p class="text-gray-500">Un arsenal technique tourné vers l'efficacité opérationnelle.</p>
+                    </div>
+                    <div class="md:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-8">
+                        <div class="space-y-4 reveal reveal-delay-1">
+                            <h3 class="font-bold text-lg border-b border-gray-200 pb-2">Technique</h3>
+                            <ul class="space-y-3 text-gray-600">
+                                <li class="flex items-center"><i class="fa-solid fa-file-excel mr-3 text-gray-400"></i> Excel</li>
+                                <li class="flex items-center"><i class="fa-solid fa-wand-magic-sparkles mr-3 text-gray-400"></i> Alteryx : Certification Core</li>
+                                <li class="flex items-center"><i class="fa-solid fa-gears mr-3 text-gray-400"></i> Power Automate</li>
+                                <li class="flex items-center"><i class="fa-solid fa-database mr-3 text-gray-400"></i> SQL & Data Visualization</li>
+                            </ul>
+                        </div>
+                        <div class="space-y-4 reveal reveal-delay-2">
+                            <h3 class="font-bold text-lg border-b border-gray-200 pb-2">Soft Skills</h3>
+                            <ul class="space-y-3 text-gray-600">
+                                <li class="flex items-center"><i class="fa-solid fa-bolt mr-3 text-gray-400"></i> Automatisation</li>
+                                <li class="flex items-center"><i class="fa-solid fa-clock mr-3 text-gray-400"></i> Curiosité</li>
+                                <li class="flex items-center"><i class="fa-solid fa-comments mr-3 text-gray-400"></i> Communication</li>
+                                <li class="flex items-center"><i class="fa-solid fa-magnifying-glass mr-3 text-gray-400"></i> Analyse</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Parcours -->
+        <section id="parcours" class="py-24 px-6">
+            <div class="max-w-6xl mx-auto">
+                <h2 class="text-4xl font-bold mb-16 text-center tracking-tight reveal">Expériences & Éducation</h2>
+                
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+                    <div class="reveal reveal-delay-1">
+                        <h3 class="text-sm font-bold uppercase tracking-widest text-gray-400 mb-8 flex items-center">
+                            <span class="w-8 h-px bg-gray-300 mr-4"></span> Professionnelle
+                        </h3>
+                        <div class="space-y-10 border-l-2 border-gray-100 ml-2 relative">
+                            <div class="pl-8 relative timeline-item">
+                                <span class="text-xs font-bold text-gray-400 uppercase">2025 — 2027</span>
+                                <h4 class="text-xl font-bold mt-1">Contrôleur de gestion (Alternant)</h4>
+                                <p class="text-gray-500 mb-2 font-medium">Orange</p>
+                            </div>
+                            <div class="pl-8 relative timeline-item">
+                                <span class="text-xs font-bold text-gray-400 uppercase">2024 — 2025</span>
+                                <h4 class="text-xl font-bold mt-1">Auditeur interne (Alternant)</h4>
+                                <p class="text-gray-500 mb-2 font-medium">Stellantis &You</p>
+                            </div>
+                            <div class="pl-8 relative timeline-item">
+                                <span class="text-xs font-bold text-gray-400 uppercase">2024</span>
+                                <h4 class="text-xl font-bold mt-1">Contrôleur de gestion (Stagiaire)</h4>
+                                <p class="text-gray-500 mb-2 font-medium">CEA</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="reveal reveal-delay-2">
+                        <h3 class="text-sm font-bold uppercase tracking-widest text-gray-400 mb-8 flex items-center">
+                            <span class="w-8 h-px bg-gray-300 mr-4"></span> Académique
+                        </h3>
+                        <div class="space-y-10 border-l-2 border-gray-100 ml-2 relative">
+                            <div class="pl-8 relative timeline-item">
+                                <span class="text-xs font-bold text-gray-400 uppercase">2025 — 2027</span>
+                                <h4 class="text-xl font-bold mt-1">Master Contrôle de gestion et audit</h4>
+                                <p class="text-gray-500 mb-2 font-medium">IAE Paris - Sorbonne</p>
+                            </div>
+                            <div class="pl-8 relative timeline-item">
+                                <span class="text-xs font-bold text-gray-400 uppercase">2024 — 2025</span>
+                                <h4 class="text-xl font-bold mt-1">Licence CCA</h4>
+                                <p class="text-gray-500 mb-2 font-medium">IAE Paris Est</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Réalisations -->
+        <section id="realisations" class="py-24 bg-white px-6">
+            <div class="max-w-6xl mx-auto">
+                <h2 class="text-4xl font-bold tracking-tight mb-4 reveal">Mes Réalisations</h2>
+                <p class="text-gray-500 mb-12 reveal">Cliquez sur un projet pour explorer mon travail.</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    
+                    <div class="group cursor-pointer reveal reveal-delay-1 hover-lift" onclick="openProject('orange')">
+                        <div class="overflow-hidden rounded-xl logo-container aspect-video mb-4">
+                            <svg class="svg-logo" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path fill="#FF7900" d="M0 0h24v24H0z"/>
+                            </svg>
+                        </div>
+                        <h4 class="text-lg font-bold">Automatisation Orange</h4>
+                        <p class="text-gray-500 text-sm mt-1">Gains de productivité via Alteryx.</p>
+                        <span class="text-xs font-bold uppercase mt-4 inline-block text-orange-600">Voir le projet →</span>
+                    </div>
+
+                    <div class="group cursor-pointer reveal reveal-delay-2 hover-lift" onclick="openProject('stellantis')">
+                        <div class="overflow-hidden rounded-xl logo-container aspect-video mb-4">
+                            <svg class="svg-logo" viewBox="0 0 280 40" xmlns="http://www.w3.org/2000/svg">
+                                <g fill="#00235E">
+                                    <path d="M15.4 28.5c-3.5 0-6.1-2.2-6.1-5.5 0-3.1 2.4-5.2 5.5-5.2 1.8 0 3.3.6 4.4 1.7l3-3.1c-1.9-1.9-4.5-3-7.5-3-6.1 0-10.8 4.3-10.8 10.1 0 5.6 4.3 10.1 10.9 10.1 3.2 0 6.1-1.3 7.9-3.4l-3-2.9c-1.1 1.2-2.7 1.2-4.3 1.2zM33.7 13.7h-4.8V33h4.8V13.7zM44.7 13.7h-4.8V33h4.8V13.7zM66.4 13.7h-4.8v15.2h-6.1V13.7h-4.8V33h15.7V13.7zM86.9 13.7h-4.8v15.2H76V13.7h-4.8V33H86.9V13.7zM105.5 13.7l-7.7 19.3h5l1.6-4.2h8.3l1.6 4.2h5.1l-7.7-19.3h-6.2zm-0.1 11l3.1-8.3 3.1 8.3h-6.2zM137.4 13.7h-4.3l-9 11.5V13.7h-4.8V33h4.8v-7.8l9.1 7.8h6.2l-10.6-9 10.6-10.3zM153.2 17.8h-5.6v-4.1h16.1v4.1h-5.6V33h-4.9V17.8zM172.9 13.7h-4.8V33h4.8V13.7zM192.4 13.7h-4.8V33h4.8V13.7zM203.3 28.5c-3.5 0-6.1-2.2-6.1-5.5 0-3.1 2.4-5.2 5.5-5.2 1.8 0 3.3.6 4.4 1.7l3-3.1c-1.9-1.9-4.5-3-7.5-3-6.1 0-10.8 4.3-10.8 10.1 0 5.6 4.3 10.1 10.9 10.1 3.2 0 6.1-1.3 7.9-3.4l-3-2.9c-1.1 1.2-2.7 1.2-4.3 1.2zM219.8 13.7v19.3h15.7v-4.1h-10.8V13.7h-4.9zM245.5 13.7v19.3h15.7v-4.1h-10.8V13.7h-4.9z"/>
+                                </g>
+                            </svg>
+                        </div>
+                        <h4 class="text-lg font-bold">Audit Stellantis &You</h4>
+                        <p class="text-gray-500 text-sm mt-1">Standardisation des outils de contrôle.</p>
+                        <span class="text-xs font-bold uppercase mt-4 inline-block text-blue-900">Voir le projet →</span>
+                    </div>
+
+                    <div class="group cursor-pointer reveal reveal-delay-3 hover-lift" onclick="openProject('cea')">
+                        <div class="overflow-hidden rounded-xl logo-container aspect-video mb-4">
+                            <svg class="svg-logo" viewBox="0 0 100 50" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M10 10h20v5H15v10h10v5H15v10h15v5H10zM40 10h20v5H45v10h15v5H45v10h15v5H40zM70 10l10 35h5l10-35h-6l-7 25-7-25z" fill="#E20613"/>
+                            </svg>
+                        </div>
+                        <h4 class="text-lg font-bold">Gestion Budgétaire CEA</h4>
+                        <p class="text-gray-500 text-sm mt-1">Suivi financier des contrats publics.</p>
+                        <span class="text-xs font-bold uppercase mt-4 inline-block text-red-600">Voir le projet →</span>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="py-12 border-t border-gray-100 text-center">
+            <div class="max-w-6xl mx-auto px-6 text-gray-400">
+                <p class="text-sm mb-4">© 2024 • Kilian EULALIE</p>
+                <div class="flex justify-center space-x-6">
+                    <a href="https://github.com/kilianeulalie-arch" target="_blank" class="hover:text-black transition-colors"><i class="fa-brands fa-github text-xl"></i></a>
+                    <a href="https://linkedin.com/in/kilian-eulalie" target="_blank" class="hover:text-black transition-colors"><i class="fa-brands fa-linkedin text-xl"></i></a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- VUE DÉTAIL PROJET -->
+    <div id="project-detail-view" class="pt-32 px-6 pb-24">
+        <div class="max-w-4xl mx-auto">
+            <button onclick="closeProject()" class="group flex items-center text-sm font-bold uppercase tracking-widest mb-12 hover:text-gray-500 transition-colors">
+                <i class="fa-solid fa-arrow-left mr-2 group-hover:-translate-x-1 transition-transform"></i> Retour au portfolio
+            </button>
+            <div id="project-content"></div>
+        </div>
+    </div>
+
+    <script>
+        const projectsData = {
+            orange: {
+                title: "Optimisation de Reporting chez Orange",
+                subtitle: "Contrôle de Gestion Opérationnel",
+                company: "Orange",
+                year: "2025-2027",
+                description: `
+                    <div class="space-y-8">
+                        <div class="p-8 bg-gray-50 rounded-2xl">
+                            <h3 class="text-2xl font-bold mb-4">Le Défi</h3>
+                            <p class="text-gray-600 leading-relaxed">Le processus de reporting mensuel nécessitait une demi-journée de travail manuel fastidieux. L'objectif était de réduire les erreurs humaines et de libérer du temps pour l'analyse.</p>
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                            <div class="border border-gray-100 p-8 rounded-2xl">
+                                <h3 class="font-bold text-lg mb-4">Solution</h3>
+                                <p class="text-gray-600 text-sm">Développement d'un flux automatisé via <strong>Alteryx</strong> fusionnant les sources hétérogènes pour une mise à jour instantanée.</p>
+                            </div>
+                            <div class="border border-gray-100 p-8 rounded-2xl">
+                                <h3 class="font-bold text-lg mb-4">Impact</h3>
+                                <div class="text-3xl font-bold text-orange-500 mb-2">-87%</div>
+                                <p class="text-gray-600 text-sm">Passage de 4h à 30min de traitement.</p>
+                            </div>
+                        </div>
+                    </div>
+                `
+            },
+            stellantis: {
+                title: "Industrialisation de l'Audit Interne",
+                subtitle: "Standardisation Opérationnelle",
+                company: "Stellantis &You",
+                year: "2024-2025",
+                description: `<div class="p-8 bg-gray-50 rounded-2xl"><p class="text-gray-600">Standardisation des outils de contrôle pour les audits récurrents.</p></div>`
+            },
+            cea: {
+                title: "Pilotage Budgétaire & Contrats",
+                subtitle: "Gestion de Contrats Institutionnels",
+                company: "CEA",
+                year: "2024",
+                description: `<div class="p-8 bg-gray-50 rounded-2xl"><p class="text-gray-600">Suivi financier de l'exécution des contrats de recherche.</p></div>`
+            }
+        };
+
+        function openProject(projectId) {
+            const data = projectsData[projectId];
+            if (!data) return;
+            document.getElementById('project-content').innerHTML = `
+                <span class="text-xs font-bold uppercase tracking-widest text-gray-400">${data.company} • ${data.year}</span>
+                <h1 class="text-4xl md:text-5xl font-bold mt-4 mb-2">${data.title}</h1>
+                <p class="text-xl text-gray-500 mb-12">${data.subtitle}</p>
+                <div class="h-px w-full bg-gray-100 mb-12"></div>
+                ${data.description}
+            `;
+            document.body.classList.add('project-mode');
+            window.scrollTo(0, 0);
+        }
+
+        function closeProject() {
+            document.body.classList.remove('project-mode');
+        }
+
+        window.addEventListener('scroll', () => {
+            if(!document.body.classList.contains('project-mode')) {
+                const winScroll = document.documentElement.scrollTop;
+                const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+                document.getElementById('progress-bar').style.width = (winScroll / height) * 100 + "%";
+            }
+        });
+
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('active'); });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+    </script>
+</body>
+</html>
