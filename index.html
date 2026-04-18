@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mon Portfolio | Kilian EULALIE</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
         
@@ -304,47 +305,77 @@
         <!-- Parcours -->
         <section id="parcours" class="py-32 px-6" style="background-color:#ffffff;">
             <div class="max-w-6xl mx-auto">
-                <h2 class="text-4xl font-bold mb-20 text-center tracking-tight reveal">Expériences & Éducation</h2>
+                <h2 class="text-4xl font-bold mb-20 text-center tracking-tight reveal">Expériences professionnelles et académiques</h2>
                 
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-20">
+                    <!-- PRO -->
                     <div class="reveal reveal-delay-1">
                         <h3 class="text-sm font-bold uppercase tracking-widest text-gray-400 mb-10 flex items-center">
                             <span class="w-12 h-px bg-gray-300 mr-4"></span> Professionnelle
                         </h3>
                         <div class="space-y-12 border-l-2 border-gray-100 ml-2 relative">
+
                             <div class="pl-10 relative timeline-item group">
                                 <span class="text-xs font-bold text-gray-400 uppercase">2025 — 2027</span>
-                                <h4 class="text-2xl font-bold mt-2 group-hover:text-orange-600 transition-colors">Contrôleur de gestion</h4>
-                                <p class="text-gray-500 mb-2 font-medium">Orange (Alternance)</p>
+                                <h4 class="text-2xl font-bold mt-2 group-hover:text-orange-500 transition-colors">Contrôleur de gestion</h4>
+                                <p class="text-gray-500 font-medium">Orange France · Alternance</p>
+                                <p class="text-gray-400 text-sm mt-1 mb-3">Division Fibre Optique — France & DOM-TOM</p>
+                                <a href="#realisations" onclick="openProject('orange'); return false;" class="inline-flex items-center gap-2 text-xs font-black uppercase tracking-widest border-b-2 border-black hover:text-gray-400 hover:border-gray-400 transition-colors">
+                                    Voir le projet <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                                </a>
                             </div>
+
                             <div class="pl-10 relative timeline-item group">
                                 <span class="text-xs font-bold text-gray-400 uppercase">2024 — 2025</span>
-                                <h4 class="text-2xl font-bold mt-2 group-hover:text-blue-800 transition-colors">Auditeur interne</h4>
-                                <p class="text-gray-500 mb-2 font-medium">Stellantis &You (Alternance)</p>
+                                <h4 class="text-2xl font-bold mt-2 group-hover:text-blue-700 transition-colors">Auditeur interne</h4>
+                                <p class="text-gray-500 font-medium">Stellantis &amp;You · Alternance</p>
+                                <p class="text-gray-400 text-sm mt-1 mb-3">Audit & Conformité SOX — Réseau IDF</p>
+                                <a href="#realisations" onclick="openProject('stellantis'); return false;" class="inline-flex items-center gap-2 text-xs font-black uppercase tracking-widest border-b-2 border-black hover:text-gray-400 hover:border-gray-400 transition-colors">
+                                    Voir le projet <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                                </a>
                             </div>
+
                             <div class="pl-10 relative timeline-item group">
                                 <span class="text-xs font-bold text-gray-400 uppercase">2024</span>
-                                <h4 class="text-2xl font-bold mt-2 group-hover:text-red-700 transition-colors">Contrôleur de gestion</h4>
-                                <p class="text-gray-500 mb-2 font-medium">CEA (Stage)</p>
+                                <h4 class="text-2xl font-bold mt-2 group-hover:text-red-600 transition-colors">Contrôleur de gestion</h4>
+                                <p class="text-gray-500 font-medium">CEA · Stage 3 mois</p>
+                                <p class="text-gray-400 text-sm mt-1 mb-3">Pilotage budgétaire de contrats institutionnels</p>
+                                <a href="#realisations" onclick="openProject('cea'); return false;" class="inline-flex items-center gap-2 text-xs font-black uppercase tracking-widest border-b-2 border-black hover:text-gray-400 hover:border-gray-400 transition-colors">
+                                    Voir le projet <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                                </a>
                             </div>
+
                         </div>
                     </div>
 
+                    <!-- ACADÉMIQUE -->
                     <div class="reveal reveal-delay-2">
                         <h3 class="text-sm font-bold uppercase tracking-widest text-gray-400 mb-10 flex items-center">
                             <span class="w-12 h-px bg-gray-300 mr-4"></span> Académique
                         </h3>
                         <div class="space-y-12 border-l-2 border-gray-100 ml-2 relative">
+
                             <div class="pl-10 relative timeline-item">
                                 <span class="text-xs font-bold text-gray-400 uppercase">2025 — 2027</span>
-                                <h4 class="text-2xl font-bold mt-2">Master Audit & Contrôle</h4>
-                                <p class="text-gray-500 mb-2 font-medium">IAE Paris - Sorbonne</p>
+                                <h4 class="text-2xl font-bold mt-2">Master Contrôle de gestion & Audit organisationnel</h4>
+                                <p class="text-gray-500 font-medium">IAE Paris — Sorbonne</p>
+                                <p class="text-gray-400 text-sm mt-1">Parcours Management de la performance et du risque</p>
                             </div>
+
                             <div class="pl-10 relative timeline-item">
                                 <span class="text-xs font-bold text-gray-400 uppercase">2024 — 2025</span>
-                                <h4 class="text-2xl font-bold mt-2">Licence CCA</h4>
-                                <p class="text-gray-500 mb-2 font-medium">IAE Paris Est</p>
+                                <h4 class="text-2xl font-bold mt-2">Licence Économie-Gestion</h4>
+                                <p class="text-gray-500 font-medium">IAE Paris Est</p>
+                                <p class="text-gray-400 text-sm mt-1">Parcours Comptabilité, Contrôle et Audit</p>
                             </div>
+
+                            <div class="pl-10 relative timeline-item">
+                                <span class="text-xs font-bold text-gray-400 uppercase">2022 — 2024</span>
+                                <h4 class="text-2xl font-bold mt-2">BUT Gestion des Entreprises et des Administrations</h4>
+                                <p class="text-gray-500 font-medium">IUT de Sceaux</p>
+                                <p class="text-gray-400 text-sm mt-1">Parcours Contrôle de gestion et pilotage de la performance</p>
+                            </div>
+
                         </div>
                     </div>
                 </div>
@@ -355,70 +386,82 @@
         <section id="realisations" class="py-32 px-6" style="background-color:#f0f4f8;">
             <div class="max-w-6xl mx-auto">
                 <h2 class="text-5xl font-bold tracking-tight mb-6 reveal">Projets Clés</h2>
-                <p class="text-gray-500 mb-16 max-w-lg reveal">Missions concrètes en entreprise — automatisation, audit et pilotage financier.</p>
+                <p class="text-gray-500 mb-16 max-w-lg reveal">Missions concrètes en entreprise — automatisation, audit et pilotage financier. <span class="font-semibold text-black">Cliquez sur un projet pour en savoir plus.</span></p>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
 
                     <!-- Orange -->
-                    <div class="group cursor-pointer reveal reveal-delay-1 bg-gray-50 rounded-2xl p-6 border border-gray-100 hover:border-black transition-all duration-300 flex flex-col justify-between" onclick="openProject('orange')">
+                    <div class="group cursor-pointer reveal reveal-delay-1 bg-white rounded-2xl p-6 border-2 border-transparent hover:border-orange-400 hover:shadow-xl hover:shadow-orange-100 hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between" onclick="openProject('orange')">
                         <div>
-                            <div class="w-10 h-10 rounded-xl bg-orange-50 flex items-center justify-center mb-5">
-                                <i class="fa-solid fa-chart-line text-orange-500"></i>
+                            <div class="w-12 h-12 rounded-xl bg-orange-50 flex items-center justify-center mb-5 group-hover:bg-orange-100 transition-colors">
+                                <i class="fa-solid fa-chart-line text-orange-500 text-lg"></i>
                             </div>
                             <h4 class="text-lg font-bold mb-1">Automatisation Fibre</h4>
                             <p class="text-gray-400 text-sm mb-4">Orange France · 2 ans</p>
                             <p class="text-gray-500 text-sm leading-relaxed">Automatisation complète du reporting fibre — imputation analytique, cash flow, présentations de clôture.</p>
                         </div>
-                        <div class="mt-6 pt-4 border-t border-gray-200 flex items-center justify-between">
-                            <div class="text-2xl font-black">÷5</div>
-                            <span class="text-xs text-gray-400 font-medium">temps de traitement</span>
+                        <div class="mt-6 pt-4 border-t border-gray-100">
+                            <div class="flex items-center justify-between mb-3">
+                                <div class="text-3xl font-black">÷5</div>
+                                <span class="text-xs text-gray-400 font-medium text-right">temps de<br>traitement</span>
+                            </div>
+                            <span class="inline-flex items-center gap-1 text-xs font-bold text-orange-500 group-hover:gap-2 transition-all">Voir l'étude de cas <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
                         </div>
                     </div>
 
                     <!-- Stellantis -->
-                    <div class="group cursor-pointer reveal reveal-delay-2 bg-gray-50 rounded-2xl p-6 border border-gray-100 hover:border-black transition-all duration-300 flex flex-col justify-between" onclick="openProject('stellantis')">
+                    <div class="group cursor-pointer reveal reveal-delay-2 bg-white rounded-2xl p-6 border-2 border-transparent hover:border-blue-400 hover:shadow-xl hover:shadow-blue-100 hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between" onclick="openProject('stellantis')">
                         <div>
-                            <div class="w-10 h-10 rounded-xl bg-blue-50 flex items-center justify-center mb-5">
-                                <i class="fa-solid fa-clipboard-check text-blue-500"></i>
+                            <div class="w-12 h-12 rounded-xl bg-blue-50 flex items-center justify-center mb-5 group-hover:bg-blue-100 transition-colors">
+                                <i class="fa-solid fa-clipboard-check text-blue-500 text-lg"></i>
                             </div>
                             <h4 class="text-lg font-bold mb-1">Audit & Conformité SOX</h4>
                             <p class="text-gray-400 text-sm mb-4">Stellantis &amp;You · 1 an</p>
                             <p class="text-gray-500 text-sm leading-relaxed">Contrôles SOX, gestion du risque de fraude et coordination des inventaires annuels.</p>
                         </div>
-                        <div class="mt-6 pt-4 border-t border-gray-200 flex items-center justify-between">
-                            <div class="text-2xl font-black">25</div>
-                            <span class="text-xs text-gray-400 font-medium">points de vente IDF</span>
+                        <div class="mt-6 pt-4 border-t border-gray-100">
+                            <div class="flex items-center justify-between mb-3">
+                                <div class="text-3xl font-black">25</div>
+                                <span class="text-xs text-gray-400 font-medium text-right">points de<br>vente IDF</span>
+                            </div>
+                            <span class="inline-flex items-center gap-1 text-xs font-bold text-blue-500 group-hover:gap-2 transition-all">Voir l'étude de cas <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
                         </div>
                     </div>
 
                     <!-- CEA -->
-                    <div class="group cursor-pointer reveal reveal-delay-3 bg-gray-50 rounded-2xl p-6 border border-gray-100 hover:border-black transition-all duration-300 flex flex-col justify-between" onclick="openProject('cea')">
+                    <div class="group cursor-pointer reveal reveal-delay-3 bg-white rounded-2xl p-6 border-2 border-transparent hover:border-red-400 hover:shadow-xl hover:shadow-red-100 hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between" onclick="openProject('cea')">
                         <div>
-                            <div class="w-10 h-10 rounded-xl bg-red-50 flex items-center justify-center mb-5">
-                                <i class="fa-solid fa-file-invoice-dollar text-red-500"></i>
+                            <div class="w-12 h-12 rounded-xl bg-red-50 flex items-center justify-center mb-5 group-hover:bg-red-100 transition-colors">
+                                <i class="fa-solid fa-file-invoice-dollar text-red-500 text-lg"></i>
                             </div>
                             <h4 class="text-lg font-bold mb-1">Pilotage Budgétaire</h4>
                             <p class="text-gray-400 text-sm mb-4">CEA · Stage 3 mois</p>
                             <p class="text-gray-500 text-sm leading-relaxed">Suivi financier de contrats institutionnels, analyse d'écarts et gestion sur SAP.</p>
                         </div>
-                        <div class="mt-6 pt-4 border-t border-gray-200 flex items-center justify-between">
-                            <div class="text-2xl font-black">SAP</div>
-                            <span class="text-xs text-gray-400 font-medium">gestion de projets</span>
+                        <div class="mt-6 pt-4 border-t border-gray-100">
+                            <div class="flex items-center justify-between mb-3">
+                                <div class="text-3xl font-black">SAP</div>
+                                <span class="text-xs text-gray-400 font-medium text-right">gestion de<br>projets</span>
+                            </div>
+                            <span class="inline-flex items-center gap-1 text-xs font-bold text-red-500 group-hover:gap-2 transition-all">Voir l'étude de cas <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
                         </div>
                     </div>
 
                     <!-- Projet Photo -->
-                    <div class="group cursor-pointer reveal reveal-delay-3 bg-gray-50 rounded-2xl p-6 border border-gray-100 hover:border-black transition-all duration-300 flex flex-col justify-between" onclick="openProject('photo')">
+                    <div class="group cursor-pointer reveal reveal-delay-3 bg-white rounded-2xl p-6 border-2 border-transparent hover:border-purple-400 hover:shadow-xl hover:shadow-purple-100 hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between" onclick="openProject('photo')">
                         <div>
-                            <div class="w-10 h-10 rounded-xl bg-purple-50 flex items-center justify-center mb-5">
-                                <i class="fa-solid fa-camera text-purple-500"></i>
+                            <div class="w-12 h-12 rounded-xl bg-purple-50 flex items-center justify-center mb-5 group-hover:bg-purple-100 transition-colors">
+                                <i class="fa-solid fa-camera text-purple-500 text-lg"></i>
                             </div>
                             <h4 class="text-lg font-bold mb-1">Projet Photo Pro</h4>
                             <p class="text-gray-400 text-sm mb-4">IUT · Projet tuteuré</p>
                             <p class="text-gray-500 text-sm leading-relaxed">Organisation d'une journée photo professionnelle pour les étudiants : recrutement photographe, logistique, communication.</p>
                         </div>
-                        <div class="mt-6 pt-4 border-t border-gray-200 flex items-center justify-between">
-                            <div class="text-2xl font-black">200</div>
-                            <span class="text-xs text-gray-400 font-medium">étudiants visés</span>
+                        <div class="mt-6 pt-4 border-t border-gray-100">
+                            <div class="flex items-center justify-between mb-3">
+                                <div class="text-3xl font-black">200</div>
+                                <span class="text-xs text-gray-400 font-medium text-right">étudiants<br>visés</span>
+                            </div>
+                            <span class="inline-flex items-center gap-1 text-xs font-bold text-purple-500 group-hover:gap-2 transition-all">Voir l'étude de cas <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
                         </div>
                     </div>
 
@@ -431,11 +474,11 @@
             <div class="max-w-6xl mx-auto px-6">
                 <p class="text-xl font-bold mb-8 text-white">Travaillons ensemble sur vos prochains défis.</p>
                 <div class="flex justify-center space-x-8 mb-12">
-                    <a href="https://github.com/kilianeulalie-arch" target="_blank" class="text-gray-500 hover:text-white transition-all transform hover:scale-125"><i class="fa-brands fa-github text-3xl"></i></a>
-                    <a href="https://linkedin.com/in/kilian-eulalie" target="_blank" class="text-gray-500 hover:text-white transition-all transform hover:scale-125"><i class="fa-brands fa-linkedin text-3xl"></i></a>
-                    <a href="mailto:kilianeulalie@gmail.com" class="text-gray-500 hover:text-white transition-all transform hover:scale-125"><i class="fa-solid fa-envelope text-3xl"></i></a>
+                    <a href="https://github.com/kilianeulalie-arch" target="_blank" class="text-gray-500 hover:text-white transition-all transform hover:scale-125"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg></a>
+                    <a href="https://linkedin.com/in/kilian-eulalie" target="_blank" class="text-gray-500 hover:text-white transition-all transform hover:scale-125"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+                    <a href="mailto:kilianeulalie@gmail.com" class="text-gray-500 hover:text-white transition-all transform hover:scale-125"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></a>
                 </div>
-                <p class="text-xs text-gray-600 uppercase tracking-widest font-bold">© 2025 — Kilian EULALIE — Portfolio</p>
+                <p class="text-xs text-gray-600 uppercase tracking-widest font-bold">© 2026 — Kilian EULALIE — Portfolio</p>
             </div>
         </footer>
     </div>
@@ -444,7 +487,7 @@
     <div id="project-detail-view" class="pt-32 px-6 pb-24 bg-white">
         <div class="max-w-4xl mx-auto">
             <button onclick="closeProject()" class="group flex items-center text-xs font-black uppercase tracking-widest mb-16 hover:text-gray-400 transition-colors">
-                <i class="fa-solid fa-arrow-left mr-3 group-hover:-translate-x-2 transition-transform"></i> Retour
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="mr-3 group-hover:-translate-x-2 transition-transform inline-block"><path d="M19 12H5"/><path d="m12 19-7-7 7-7"/></svg> Retour
             </button>
             <div id="project-content" class="reveal active"></div>
         </div>
