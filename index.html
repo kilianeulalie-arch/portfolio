@@ -250,21 +250,25 @@
 
             </div>
 
-            <!-- Projet étudiant -->
-            <div class="mt-8">
-                <p class="text-xs font-bold uppercase tracking-widest text-gray-400 mb-4 flex items-center gap-3"><span class="w-8 h-px bg-gray-300"></span>Projet étudiant</p>
-                <div class="group cursor-pointer bg-white rounded-2xl p-5 border border-gray-200 border-dashed hover:border-purple-400 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300 flex items-center gap-6 max-w-md" onclick="openProject('photo')">
-                    <div class="w-10 h-10 rounded-xl bg-purple-50 flex items-center justify-center flex-shrink-0 group-hover:bg-purple-100 transition-colors">
-                        <i class="fa-solid fa-camera text-purple-400 text-sm"></i>
-                    </div>
-                    <div class="flex-1 min-w-0">
-                        <div class="flex items-center gap-2 mb-0.5">
-                            <h4 class="text-sm font-bold">Projet Photo Pro</h4>
-                            <span class="text-xs text-purple-400 font-semibold bg-purple-50 px-2 py-0.5 rounded-full">Étudiant</span>
+            <!-- Ligne 2 : projet étudiant aligné à droite -->
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mt-6">
+                <div class="md:col-start-4">
+                    <p class="text-xs font-bold uppercase tracking-widest text-gray-400 mb-3 flex items-center gap-2"><span class="w-6 h-px bg-gray-300"></span>Projet étudiant</p>
+                    <div class="group cursor-pointer bg-white rounded-2xl p-5 border border-dashed border-gray-200 hover:border-purple-400 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300 flex flex-col gap-3" onclick="openProject('photo')">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-xl bg-purple-50 flex items-center justify-center flex-shrink-0 group-hover:bg-purple-100 transition-colors">
+                                <i class="fa-solid fa-camera text-purple-400 text-sm"></i>
+                            </div>
+                            <div>
+                                <div class="flex items-center gap-2">
+                                    <h4 class="text-sm font-bold">Projet Photo Pro</h4>
+                                    <span class="text-xs text-purple-400 font-semibold bg-purple-50 px-2 py-0.5 rounded-full">Étudiant</span>
+                                </div>
+                                <p class="text-gray-400 text-xs">IUT de Sceaux · 200 étudiants</p>
+                            </div>
                         </div>
-                        <p class="text-gray-400 text-xs">IUT de Sceaux · 200 étudiants · Gestion de projet de A à Z</p>
+                        <span class="inline-flex items-center gap-1 text-xs font-bold text-purple-400 group-hover:gap-2 transition-all">Voir le détail <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
                     </div>
-                    <span class="text-purple-400 flex-shrink-0 group-hover:translate-x-1 transition-transform"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
                 </div>
             </div>
         </div>
